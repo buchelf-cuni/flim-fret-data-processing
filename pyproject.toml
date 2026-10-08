@@ -1,0 +1,28 @@
+[project]
+name = "fret-flim-data-processing"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Filip Buchel", email = "filip.buchel@natur.cuni.cz" }
+]
+requires-python = ">=3.10,<3.11"
+
+dependencies = [
+    "cellpose==4.2.1.1",
+    "cnsplots==0.6.0",
+    "matplotlib>=3.10.9",
+    "napari==0.7",
+    "numpy>=2.2.6",
+    "pandas>=2.3.3",
+    "scikit-image==0.25",
+    "scipy>=1.15.3",
+    "tttrkit==0.1.0",
+]
+
+[project.scripts]
+fret-flim-data-processing = "fret_flim_data_processing:main"
+
+[build-system]
+requires = ["uv_build>=0.12.0,<0.13.0"]
+build-backend = "uv_build"

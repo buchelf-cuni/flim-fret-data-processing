@@ -17,9 +17,9 @@ from skimage import filters, io, morphology
 from skimage.measure import label as skimage_label
 from skimage.segmentation import expand_labels
 
-from ptuio.decoder import T3OverflowCorrector
-from ptuio.reconstructor import ScanConfig
-from ptuio.utils import estimate_tcspc_bins
+from tttrkit.ptuio.decoder import T3OverflowCorrector
+from tttrkit.ptuio.reconstructor import ScanConfig
+from tttrkit.ptuio.utils import estimate_tcspc_bins
 
 
 # ---------------------------------------------------------------------------
