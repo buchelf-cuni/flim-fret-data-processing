@@ -1,0 +1,39 @@
+[project]
+name = "flim-fret-data-processing"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Filip Buchel", email = "filip.buchel@natur.cuni.cz" }
+]
+requires-python = ">=3.10,<3.11"
+
+dependencies = [
+    "cellpose==4.2.1.1",
+    "cnsplots==0.6.0",
+    "matplotlib>=3.10.9",
+    "napari==0.7",
+    "numpy>=2.2.6",
+    "pandas>=2.3.3",
+    "scikit-image==0.25",
+    "scipy>=1.15.3",
+    "torch>=2.7",
+    "torchvision",
+    "tttrkit==0.1.0",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+torchvision = { index = "pytorch-cu128" }
+
+[project.scripts]
+flim-fret-data-processing = "flim_fret_data_processing:main"
+
+[build-system]
+requires = ["uv_build>=0.12.0,<0.13.0"]
+build-backend = "uv_build"

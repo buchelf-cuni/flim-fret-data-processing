@@ -1,7 +1,10 @@
-# data and results are deposited separately
-data/
-
 __pycache__/
 .ipynb_checkpoints/
 .vscode/
 .claude/
+.venv/
+
+# Ignore downloaded and generated data
+data/*
+!data/README.md
+

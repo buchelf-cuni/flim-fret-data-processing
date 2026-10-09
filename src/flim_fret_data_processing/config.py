@@ -1,12 +1,12 @@
 """Data locations shared by all notebooks.
 
-Unpack the dataset into `data/` next to this file, or point `DATA_ROOT` (or
+Unpack the dataset into `data/` at the root of this project, or point `DATA_ROOT` (or
 the FLIM_DATA_ROOT environment variable) at it. See the README for the layout.
 """
 import os
 from pathlib import Path
 
-REPO_DIR = Path(__file__).resolve().parent
+REPO_DIR = Path(__file__).resolve().parents[2]
 
 DATA_ROOT = Path(os.environ.get('FLIM_DATA_ROOT', REPO_DIR / 'data'))
 
@@ -27,4 +27,4 @@ MASKS_DIR = DATA_ROOT / 'masks_curated'
 RESULTS_DIR = Path(os.environ.get('FLIM_RESULTS_DIR', DATA_ROOT / 'results'))
 
 # Sample folder name -> construct name used in tables and figures.
-SAMPLE_NAMES_CSV = REPO_DIR / 'rename_key.csv'
+SAMPLE_NAMES_CSV = REPO_DIR / 'analysis_notebooks' / 'rename_key.csv'
