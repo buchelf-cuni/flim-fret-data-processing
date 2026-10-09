@@ -8,7 +8,7 @@ the donor (mTurquoise2) lifetime and apparent FRET efficiency in both
 compartments by phasor analysis.
 
 The raw data, curated masks and result tables are available at
-**[Zenodo DOI — add the link]**.
+**[ZENODO](https://zenodo.org/records/23242459)**.
 
 ## Workflow
 
@@ -40,12 +40,12 @@ results can be reproduced without repeating steps 1-3. The whole dataset
 ## Installation
 
 ```bash
-conda env create -f requirements.yml
-conda activate flim-buchel-2025
-jupyter lab
+git clone https://github.com/buchelf-cuni/flim-fret-data-processing
+cd flim-fret-data-processing
+uv sync
 ```
 
-Photon data are read with [tttrkit](https://github.com/IMCF-Biocev/tttrkit).
+Raw photon data are read with [tttrkit](https://github.com/IMCF-Biocev/tttrkit).
 Tested with Python 3.10, tttrkit 0.1.0, scikit-image 0.25, Cellpose 4.2 and
 napari 0.7 on Linux; a GPU is not required.
 

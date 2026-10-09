@@ -4,6 +4,7 @@ import os
 import re
 import struct
 import zlib
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -21,6 +22,7 @@ from tttrkit.ptuio.decoder import T3OverflowCorrector
 from tttrkit.ptuio.reconstructor import ScanConfig
 from tttrkit.ptuio.utils import estimate_tcspc_bins
 
+from flim_fret_data_processing.config import REPO_DIR
 
 # ---------------------------------------------------------------------------
 # Dataset layout
@@ -488,6 +490,7 @@ def save_overview(path, title, rows, column_titles):
 
     `rows` is a list of (image name, overlay, overlay, ...).
     """
+    save_path = Path(path)
     n_columns = len(column_titles)
     fig, axes = plt.subplots(len(rows), n_columns,
                              figsize=(3 * n_columns, 3 * len(rows)), squeeze=False)
@@ -504,9 +507,9 @@ def save_overview(path, title, rows, column_titles):
 
     fig.suptitle(title)
     fig.tight_layout(rect=[0, 0, 1, 0.97])
-    fig.savefig(path, dpi=150)
+    fig.savefig(save_path, dpi=150)
     plt.close(fig)
-    print(f"Overview saved to {path}")
+    print(f"Overview saved to {save_path.relative_to(REPO_DIR)}")
 
 
 def show_image_grid(images, title, cols=4, tile_size=(2.5, 2.5)):
