@@ -4,3 +4,7 @@ __pycache__/
 .claude/
 .venv/
 
+# Ignore downloaded and generated data
+data/*
+!data/README.md
+
